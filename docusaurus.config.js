@@ -8,11 +8,11 @@ const announcementBarContent = ''
 export default async function createConfigAsync() {
   /** @type {import('@docusaurus/types').Config} */
   return {
-    title: '愧怍的小站',
-    url: 'https://kuizuo.cn',
+    title: '富足与您同在的小站',
+    url: 'https://ntscshen.site',
     baseUrl: '/',
     favicon: 'img/favicon.ico',
-    organizationName: 'kuizuo',
+    organizationName: 'ntscshen',
     projectName: 'blog',
     tagline: '道阻且长，行则将至',
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -24,7 +24,7 @@ export default async function createConfigAsync() {
       metadata: [
         {
           name: 'keywords',
-          content: '愧怍, kuizuo',
+          content: '富足与您同在, ntscshen',
         },
         {
           name: 'keywords',
@@ -45,15 +45,15 @@ export default async function createConfigAsync() {
           tagName: 'meta',
           attributes: {
             name: 'description',
-            content: '愧怍的个人博客',
+            content: '富足与您同在的个人博客',
           },
         },
       ],
       navbar: {
         logo: {
-          alt: '愧怍',
-          src: 'img/logo.webp',
-          srcDark: 'img/logo.webp',
+          alt: '富足与您同在',
+          src: 'img/logo.jpg',
+          srcDark: 'img/logo.jpg',
         },
         hideOnScroll: true,
         items: [
@@ -94,20 +94,19 @@ export default async function createConfigAsync() {
               { label: '归档', to: 'blog/archive' },
               { label: '技术笔记', to: 'docs/skill' },
               { label: '实战项目', to: 'project' },
-              { label: '前端示例', to: 'https://example.kuizuo.cn' },
+              { label: '前端示例', to: 'https://example.ntscshen.cn' },
             ],
           },
           {
             title: '社交媒体',
             items: [
               { label: '关于我', to: '/about' },
-              { label: 'GitHub', href: 'https://github.com/kuizuo' },
-              { label: 'Twitter', href: 'https://twitter.com/kuizuo' },
+              { label: 'GitHub', href: 'https://github.com/ntscshen' },
+              { label: 'Twitter', href: 'https://twitter.com/ntscshen' },
               {
                 label: '掘金',
-                href: 'https://juejin.cn/user/1565318510545901',
-              },
-              { label: 'Discord', href: 'https://discord.gg/M8cVcjDxkz' },
+                href: 'https://juejin.cn/user/1996368844695678',
+              }
             ],
           },
           {
@@ -122,15 +121,15 @@ export default async function createConfigAsync() {
             ],
           },
         ],
-        copyright: `<p><a href="http://beian.miit.gov.cn/" >${beian}</a></p><p>Copyright © 2020 - PRESENT 愧怍 Built with Docusaurus.</p>`,
+        copyright: `<p><a href="http://beian.miit.gov.cn/" >${beian}</a></p><p>Copyright © 2020 - PRESENT 富足与您同在 Built with Docusaurus.</p>`,
       },
       algolia: {
         appId: 'GV6YN1ODMO',
         apiKey: '50303937b0e4630bec4a20a14e3b7872',
-        indexName: 'kuizuo',
+        indexName: 'ntscshen',
       },
       giscus: {
-        repo: 'kuizuo/blog',
+        repo: 'ntscshen/blog',
         repoId: 'MDEwOlJlcG9zaXRvcnkzOTc2MjU2MTI=',
         category: 'General',
         categoryId: 'DIC_kwDOF7NJDM4CPK95',
@@ -138,14 +137,14 @@ export default async function createConfigAsync() {
         darkTheme: 'dark',
       },
       socials: {
-        github: 'https://github.com/kuizuo',
-        twitter: 'https://twitter.com/kuizuo',
+        github: 'https://github.com/ntscshen',
+        twitter: 'https://twitter.com/ntscshen',
         juejin: 'https://juejin.cn/user/1565318510545901',
-        csdn: 'https://blog.csdn.net/kuizuo12',
+        csdn: 'https://blog.csdn.net/ntscshen12',
         qq: 'https://wpa.qq.com/msgrd?v=3&amp;uin=911993023&amp;site=qq',
-        zhihu: 'https://www.zhihu.com/people/kuizuo',
+        zhihu: 'https://www.zhihu.com/people/ntscshen',
         cloudmusic: 'https://music.163.com/#/user/home?id=1333010742',
-        email: 'mailto:hi@kuizuo.cn',
+        email: 'mailto:hi@ntscshen.cn',
       },
       prism: {
         theme: themes.oneLight,
@@ -213,7 +212,7 @@ export default async function createConfigAsync() {
         {
           path: 'blog',
           editUrl: ({ locale, blogDirPath, blogPath, permalink }) =>
-            `https://github.com/kuizuo/blog/edit/main/${blogDirPath}/${blogPath}`,
+            `https://github.com/ntscshen/blog/edit/main/${blogDirPath}/${blogPath}`,
           editLocalizedFiles: false,
           blogDescription: '代码人生：编织技术与生活的博客之旅',
           blogSidebarCount: 10,
@@ -224,8 +223,8 @@ export default async function createConfigAsync() {
             defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
           feedOptions: {
             type: 'all',
-            title: '愧怍',
-            copyright: `Copyright © ${new Date().getFullYear()} 愧怍 Built with Docusaurus.<p><a href="http://beian.miit.gov.cn/" class="footer_lin">${beian}</a></p>`,
+            title: '富足与您同在',
+            copyright: `Copyright © ${new Date().getFullYear()} 富足与您同在 Built with Docusaurus.<p><a href="http://beian.miit.gov.cn/" class="footer_lin">${beian}</a></p>`,
           },
         },
       ],
@@ -243,7 +242,7 @@ export default async function createConfigAsync() {
             'queryString',
           ],
           pwaHead: [
-            { tagName: 'link', rel: 'icon', href: '/img/logo.png' },
+            { tagName: 'link', rel: 'icon', href: '/img/logo.jpg' },
             { tagName: 'link', rel: 'manifest', href: '/manifest.json' },
             { tagName: 'meta', name: 'theme-color', content: '#12affa' },
           ],

@@ -20,7 +20,7 @@ function SiteInfo() {
   // 本站信息
   title: '愧怍的小站',
   description: '道阻且长，行则将至',
-  avatar: 'https://kuizuo.cn/img/logo.png'
+  avatar: 'https://kuizuo.cn/img/logo.jpg'
 }`}
       </CodeBlock>
     </div>

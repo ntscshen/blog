@@ -2,15 +2,15 @@
   "name": "blog",
   "version": "3.0.0",
   "author": {
-    "url": "https://github.com/kuizuo",
-    "email": "hi@kuizuo.cn",
-    "name": "Kuizuo"
+    "url": "https://github.com/ntscshen",
+    "email": "ntscshen@gmail.cn",
+    "name": "ntscshen"
   },
   "repository": {
-    "url": "https://github.com/kuizuo/blog",
+    "url": "https://github.com/ntscshen/blog",
     "type": "git"
   },
-  "homepage": "https://kuizuo.cn",
+  "homepage": "https://ntscshen.site",
   "license": "MIT",
   "scripts": {
     "docusaurus": "docusaurus",
