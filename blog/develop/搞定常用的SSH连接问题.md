@@ -77,11 +77,9 @@ xclip -sel clip < ~/.ssh/id_rsa.pub
 
 让SSH走443端口[解决方案](https://help.github.com/articles/using-ssh-over-the-https-port/)
 
-那么服务器的公钥将与`known_hosts`文件中的记录不匹配。在这种情况下，你需要更新`known_hosts`文件中的记录。可以使用文本编辑器手动编辑`known_hosts`文件，删除或修改与服务器对应的行。或者，你也可以使用`ssh-keygen -R hostname`命令从`known_hosts`文件中删除特定主机的记录
-
 ## 重新生成并更新了服务器公钥，连接不上怎么办？
 
-如果你重新安装了操作系统或重新生成并添加了SSH。出现失败场景，你需要更新 `known_hosts` 文件。
+如果你重新生成并添加SSH。出现连接失败场景，你需要更新 `known_hosts` 文件。
 
 你可以将`known_hosts`文件视为SSH的一种缓存机制，用于存储之前连接过的SSH服务器的公钥信息。如果SSH服务器的公钥发生更改（例如，服务器重新安装或SSH密钥对重新生成），你需要更新你的`known_hosts`文件以包含新的服务器公钥。
 
@@ -96,7 +94,7 @@ git.xxx.com ssh-ed25519 AAAAC3NzaC1l...
 ...
 ```
 
-最常见的做法是使用`ssh-keygen -R hostname`命令从`known_hosts`文件中删除对于的主机的记录。`hostname` 对应就是 `github.com`、`git.xxx.com`、`124.111.78.185` ，删除成功之后，重新连接服务
+解决这个问题最常见的做法是使用`ssh-keygen -R hostname`命令从`known_hosts`文件中删除对于的主机的记录。`hostname` 对应就是 `github.com`、`git.xxx.com`、`124.111.78.185` ，删除成功之后，重新连接服务即可
 
 - `known_hosts`文件是SSH安全基础设施的重要组成部分，它有助于保护SSH连接免受未经授权的访问和篡改。
 
@@ -104,11 +102,12 @@ git.xxx.com ssh-ed25519 AAAAC3NzaC1l...
 
 ## 管理多个SSH Key
 
-使用场景：
+使用场景：多场景ssh连接
 
-1. github一个
-2. gitlab一个
-3. 2个私有的git服务器
+1. github一个ssh
+2. gitlab一个ssh
+3. 1个私有的git服务一个ssh
+4. 内网一个ssh
 
 ### 步骤1
 
@@ -147,7 +146,7 @@ Host 服务器名B
     identityfile 本地私钥地址
 ```
 
-### 常用的Config配置选项
+**常用的Config配置选项**
 
 - 必须配置
   - `Host`：指定配置块
