@@ -1,5 +1,5 @@
 ---
-slug: ntscshen
+slug: ssh_connect
 title: 搞定常用的SSH连接问题
 date: 2023-11-27
 authors: kuizuo
