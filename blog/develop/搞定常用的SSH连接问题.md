@@ -9,11 +9,11 @@ authors: kuizuo
 
 
 
-# `SSH`解决什么问题
+## `SSH`解决什么问题
 
 SSH（Secure Shell）主要解决了在不安全网络上进行安全远程登录和其他安全网络服务的问题。它提供了一种加密的通道，使得用户可以安全地远程登录到另一个计算机系统，并且在远程系统上执行命令、传输文件等操作，而无需担心信息被截获或篡改。SSH协议通过对传输的数据进行加密和身份验证，确保了远程连接的安全性。
 
-# 生成`SSH`公钥
+## 生成`SSH`公钥
 
 命令行输入：`ssh-keygen -t rsa -C "ntscshen@163.com"`
 
@@ -71,7 +71,7 @@ xclip -sel clip < ~/.ssh/id_rsa.pub
 # Copies the contents of the id_rsa.pub file to your clipboard
 ```
 
-# 连接测试
+## 连接测试
 
 命令行输入：  `ssh -T git@github.com`，只要见到 `successfully` 就成功了
 
@@ -79,7 +79,7 @@ xclip -sel clip < ~/.ssh/id_rsa.pub
 
 那么服务器的公钥将与`known_hosts`文件中的记录不匹配。在这种情况下，你需要更新`known_hosts`文件中的记录。可以使用文本编辑器手动编辑`known_hosts`文件，删除或修改与服务器对应的行。或者，你也可以使用`ssh-keygen -R hostname`命令从`known_hosts`文件中删除特定主机的记录
 
-# 重新生成并更新了服务器公钥，连接不上怎么办？
+## 重新生成并更新了服务器公钥，连接不上怎么办？
 
 如果你重新安装了操作系统或重新生成并添加了SSH。出现失败场景，你需要更新 `known_hosts` 文件。
 
@@ -102,7 +102,7 @@ git.xxx.com ssh-ed25519 AAAAC3NzaC1l...
 
     `known_hosts`这个文件存储了你连接过的所有SSH服务器的公钥信息。当你尝试连接到一个新的SSH服务器时，你的SSH客户端会检查该服务器的公钥是否在`known_hosts`文件中。如果不在，你的SSH客户端会提示你确认该服务器的公钥，并将其添加到`known_hosts`文件中。如果服务器的公钥已经存在于文件中，但与你尝试连接的服务器的公钥不匹配，你的SSH客户端会拒绝连接，以防止中间人攻击。
 
-# 管理多个SSH Key
+## 管理多个SSH Key
 
 使用场景：
 
