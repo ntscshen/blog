@@ -1,6 +1,6 @@
 ---
 slug: nest_core_notion
-title: NestJS服务框架核心概念梳理&语言模型Prompt
+title: NestJS服务框架核心概念梳理|语言模型Prompt
 date: 2023-12-08
 authors: kuizuo
 tags: [server, cloud]
