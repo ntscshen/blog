@@ -7,6 +7,76 @@ tags: [server, cloud]
 keywords: [develop, cloud]
 ---
 
+### 模块
+
+module在nest框架中，是运行时的组织者
+
+nest本身只关心你的module的架构，就是通过 `Module` 装饰器中的 `imports` 确定的。根节点是 `AppModule(Root)`,通过 imports 导入其他的`module(Module1, Module2, Module3)` 依次类推。1，2，3 在分别`imports` 其他的子级Module。这样就成了一个树型的组织结构。方便nest进行模块的依次管理
+
+```tsx
+// main.ts
+@Module({
+ imports: [
+  Module1,
+  Module2,
+  Module3
+ ]
+})
+// Module1,
+@Module({
+ imports:[
+  Module1-1,
+  Module1-2,
+  Module1-3
+ ]
+})
+// Module2,
+@Module({
+ imports:[
+  Module2-1,
+  Module2-2,
+  Module2-3
+ ]
+})
+// Module3,
+@Module({
+ imports:[
+  Module3-1,
+  Module3-2,
+  Module3-3
+ ]
+})
+
+```
+
+`**Module` 中包含了四大块核心内容**
+
+1. controller 控制器
+2. provider 提供者( 提供服务 )
+
+原则上来说，我们会把关联性强的 `controller` 和 `provider` 放到一个 `Module` 中。但是在某些场景下，在其他的 `Module` 中能去复用另一个 `Module` provider提供的数据或服务。
+
+再次强调：原则上你要是设计的好，理论上 大家( `Module` ) 之间是没有什么瓜葛的
+
+A `Module` 要用到 B `Module` 里面的 `provider`,那么在B的某些服务，就通过`exports` 暴露出来。
+
+A Module 通过 imports这个字段，将B暴露的某些服务导入。然后将B导出的服务，在通过注入到`providers`中。这样A就可以用B的服务了。
+
+基于此需求，`Module` 又多出了两大支撑内容
+
+1. `imports` 导入
+2. `exports` 到出
+
+```tsx
+// B Module
+@Module({
+ imports: [...],
+ controllers: [...],
+ providers: [...],
+ exports: [...]
+})
+```
+
 ## 核心生命周期
 
 ![iShot_2023-06-08_16.20.37.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/19deea74-ca6f-45ab-b26c-ff2d22a0c418/bf905caf-3469-4834-81a5-94fdb692600a/iShot_2023-06-08_16.20.37.png)
@@ -52,29 +122,6 @@ keywords: [develop, cloud]
 
 1. 用于在抛出异常前后对异常进行处理
 2. 解决问题：用于全局异常处理
-
-## 语言模型Prompt
-
-公式：**指令 + 输入数据 + 背景 + 输出要求**
-
-通过五个要素的组合，可以更有效地引导大预言模型生成用户期望的输出
-
-| 名称     | 描述             | 示例                                       |
-| -------- | ---------------- | ------------------------------------------ |
-| 指令     | 提供明确的指令   | 简述、解释、翻译、总结、润色、写一篇文章等 |
-| 输入数据 | 原始数据输入     | 总结的内容、提供的文本、编写的代码         |
-| 背景     | 任务的上下文信息 |
-帮助模型更好的理解
-指令和输入数据 | 关于计算机科普文，写给小学生、大学生、计算机专业人员，得到的内容完全不同 |
-| 输出要求 | 期望模型输出的指标
-结构、格式等 | 输出5条xxx相关内容，按照张瑶持续排序1…2…3..，按照Markdown表示形式输出 |
-| 示例 | 提供一个具体例子 | … |
-
-1. **明确具体：**加入场景要求、具体任务(给出一点的边界条件)
-2. **提供上下文：**区分不同的部分("", ```, <>, JSON、Markdown等)
-3. **正确的语法：**正确的语法和拼写，避免使用技术性活不常用的术语
-4. **分布询问：**复杂任务分布进行，提供引导或示例
-5. **输出要求：**提供输出要求，比如，结构化的输出(实例)
 
 ## 案例
 
