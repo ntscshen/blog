@@ -1,7 +1,19 @@
 ---
+
 slug: nest_core_notion
 title: NestJS服务框架核心概念梳理|语言模型Prompt
 date: 2023-12-08
+authors: kuizuo
+tags: [server, cloud]
+keywords: [develop, cloud]
+
+---
+
+---
+
+slug: ioc_di_provider
+title: 控制反转&依赖注入&Provider
+date: 2023-12-05
 authors: kuizuo
 tags: [server, cloud]
 keywords: [develop, cloud]
